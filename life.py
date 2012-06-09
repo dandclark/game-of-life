@@ -15,6 +15,9 @@ import time
 
 DEAD_CELL_CHAR = '.'
 LIVE_CELL_CHAR = 'X'
+
+# Number or blank lines to print above and below the grid to center it in the
+# console.
 LINES_TO_CLEAR = 40
 LINES_TO_CENTER = 20
 
@@ -38,7 +41,6 @@ def readGrid(filename):
     file.close()
     if not grid[-1]:
         grid.pop()
-    print grid
     return grid
 
 
@@ -110,11 +112,8 @@ if len(sys.argv) < 2:
 
 theGrid = readGrid(sys.argv[1])
 
-displayGrid(theGrid)
-
 while True:
-    theGrid = doTurn(theGrid)
-    print
+    # Print blank lines above and below the grid to center it in the console.
     for i in range(LINES_TO_CLEAR):
         print
     displayGrid(theGrid)
@@ -122,3 +121,4 @@ while True:
         print
     #raw_input()
     time.sleep(0.2)
+    theGrid = doTurn(theGrid)
