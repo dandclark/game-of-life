@@ -1,3 +1,14 @@
+#!/usr/bin/python
+#
+# life.py
+#
+# Dan Clark
+# ddclark@umich.edu
+# 9 June 2012
+#
+# Simple console implementation of Conway's Game of Life.
+#
+
 import sys
 import os.path
 import time
